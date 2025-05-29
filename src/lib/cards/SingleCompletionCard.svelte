@@ -19,7 +19,7 @@
 			<span class="time" class:first={comp.first} class:old={comp.old} title={formatTime(comp.time, true)}
 				>{formatTime(comp.time)}</span>
 		{/if}
-		<span class="mission-name">{comp.mission.name}</span>
+		<span class="mission-name">{comp.seasonSolve != 0 ? comp.mission.name.concat(" (S"+comp.seasonSolve+")") : comp.mission.name}</span>
 		{#if comp.dateAdded}
 			<span>{comp.dateAdded.toLocaleDateString(undefined, dateOptions)}</span>
 		{/if}

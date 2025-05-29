@@ -16,7 +16,7 @@
 
 <a class="mission" href="/mission/{properUrlEncode(mission.name)}">
 	<div class="mission-name" class:green={mission.defuser && mission.expert && mission.efm}>
-		{mission.name}
+		{mission.seasonSolve != 0 ? mission.name.concat(" (S"+mission.seasonSolve+")") : mission.name}
 	</div>
 	<div {title}>
 		{#if mission.defuser}

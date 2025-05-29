@@ -28,6 +28,7 @@ export const load = async function ({ parent, params }: any) {
 			dateAdded: true,
 			first: true,
 			time: true,
+			seasonSolve: true,
 			mission: {
 				select: {
 					name: true,
@@ -55,6 +56,7 @@ export const load = async function ({ parent, params }: any) {
 					first: true,
 					time: true,
 					old: true,
+					seasonSolve: true,
 					mission: {
 						select: { name: true }
 					}

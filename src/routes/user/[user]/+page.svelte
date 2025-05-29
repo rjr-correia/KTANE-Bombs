@@ -9,7 +9,7 @@
 	import MissionCompletionCard from '$lib/cards/MissionCompletionCard.svelte';
 	import { browser } from '$app/environment';
 	import { writable } from 'svelte/store';
-	import { TP_TEAM } from '$lib/const';
+	import { TP_TEAM, currentSeason } from '$lib/const';
 	import type { Completion, MissionPack } from '@prisma/client';
 	import CompletionCard from '$lib/cards/CompletionCard.svelte';
 	import MissionCard from '$lib/cards/MissionCard.svelte';
@@ -110,6 +110,7 @@
 				missions[name] = new IndividualCompletion();
 				missions[name].name = name;
 			}
+			missions[name].seasonSolve = c.seasonSolve;
 			if (tp) {
 				missions[name].efm = true;
 				missions[name].nEFM = 1;
@@ -336,7 +337,7 @@
 							style:background-color={key.includes('+')
 								? '#00ff0044'
 								: getPersonColor(comp.team.length, comp.team.indexOf(username), comp.solo, tp)}>
-							<span class="mission-name">{comp.mission.name}</span>
+							<span class="mission-name">{comp.seasonSolve != 0 ? comp.mission.name.concat(" (S"+comp.seasonSolve+")") : comp.mission.name}</span>
 							{#if solveCount > 1}
 								<b>×{solveCount}</b>
 							{/if}

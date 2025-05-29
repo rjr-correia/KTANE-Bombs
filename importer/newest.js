@@ -48,7 +48,8 @@ const { PrismaClient } = pkg;
 					notes: completion.notes,
 					missionName: mission.name,
 					dateAdded: completion.dateAdded == null ? null : new Date(completion.dateAdded),
-					verified: completion.verified
+					verified: completion.verified,
+					seasonSolve: completion.seasonSolve
 				});
 			}
 		}

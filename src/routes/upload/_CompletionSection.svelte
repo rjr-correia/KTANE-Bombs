@@ -5,7 +5,7 @@
 	import { Completion } from '$lib/types';
 	import { formatTime, getLogfileLinks, parseTime } from '$lib/util';
 	import toast from 'svelte-french-toast';
-	import { TP_TEAM } from '$lib/const';
+	import { TP_TEAM, currentSeason } from '$lib/const';
 
 	export let missionInfo: { [name: string]: any };
 	export let solverNames: string[];
@@ -215,6 +215,10 @@
 			})
 			.catch(() => toast.error('An error occurred.'));
 	}
+	function onSeasonToggle(e: Event, completion: Completion) {
+		const checked = (e.target as HTMLInputElement).checked;
+		completion.seasonSolve = checked ? $currentSeason : 0;
+	}
 </script>
 
 <form class="block flex">
@@ -286,6 +290,12 @@
 		bind:checked={tpSolve}
 		on:change={tpChange}
 		disabled={completion.solo || completion.team.length > 1} />
+	<Checkbox
+    		id="seasonSolve"
+    		label="Season Solve"
+				checked={completion.seasonSolve === 1}
+				on:change={(e) => onSeasonToggle(e, completion)}
+	/>
 </form>
 <CompletionCard {completion} />
 <div class="block">

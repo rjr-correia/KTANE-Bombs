@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TP_TEAM } from '$lib/const';
+	import { TP_TEAM, currentSeason } from '$lib/const';
 	import type { Completion } from '$lib/types';
 	import { classifyLink, formatTime, getPersonColor, popup, preventDisappear } from '$lib/util';
 
@@ -34,6 +34,14 @@
 			<a href={proof}>{classifyLink(proof)}</a>
 		{/each}
 	</div>
+	{#if completion.seasonSolve === $currentSeason}
+		<div
+			class="season-solve"
+			style="color: red; font-weight: bold; margin: 4px 0 0 0;"
+		>
+			Season
+		</div>
+	{/if}
 </div>
 
 <style>

@@ -68,7 +68,8 @@ const { PrismaClient } = pkg;
 					missionName: mission.name,
 					dateAdded: completion.dateAdded == null ? null : new Date(completion.dateAdded),
 					uploadedBy: completion.uploadedBy,
-					verified: completion.verified
+					verified: completion.verified,
+					seasonSolve: completion.seasonSolve
 				});
 			}
 		}
@@ -159,7 +160,8 @@ const { PrismaClient } = pkg;
 						},
 						dateAdded: completion.dateAdded,
 						uploadedBy: completion.uploadedBy,
-						verified: completion.verified
+						verified: completion.verified,
+						seasonSolve: completion.seasonSolve
 					}
 				})
 			);
@@ -179,7 +181,8 @@ const { PrismaClient } = pkg;
 						notes: completion.notes,
 						dateAdded: completion.dateAdded,
 						uploadedBy: completion.uploadedBy,
-						verified: completion.verified
+						verified: completion.verified,
+						seasonSolve: completion.seasonSolve
 					}
 				})
 			);

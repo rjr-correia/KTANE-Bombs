@@ -76,6 +76,7 @@ export class Completion {
 	notes: string | null = null;
 	dateAdded: Date | null = null;
 	uploadedBy: string | null = null;
+	seasonSolve = 0;
 }
 
 export class IndividualCompletion {
@@ -88,6 +89,7 @@ export class IndividualCompletion {
 	expert = false;
 	efm = false;
 	solo = false;
+	seasonSolve = 0;
 }
 
 export enum MustHave {
@@ -148,4 +150,5 @@ export class MissionCompletion {
 	time: number | undefined = undefined;
 	old: boolean | undefined = undefined;
 	mission: Pick<Mission, 'name'> = { name: '' };
+	seasonSolve = 0;
 }

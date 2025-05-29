@@ -152,7 +152,8 @@ export const actions: Actions = {
 				old: completion.old,
 				team: completion.team,
 				notes: completion.notes,
-				dateAdded: completion.dateAdded
+				dateAdded: completion.dateAdded,
+				seasonSolve: completion.seasonSolve
 			}
 		});
 

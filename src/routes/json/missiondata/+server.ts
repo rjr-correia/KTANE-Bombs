@@ -36,7 +36,8 @@ export const GET: RequestHandler = async function ({ locals }: RequestEvent) {
 					team: true,
 					time: true,
 					uploadedBy: true,
-					verified: true
+					verified: true,
+					seasonSolve: true
 				}
 			},
 			dateAdded: true,

@@ -23,7 +23,7 @@
 	import type { EditMission } from './_types';
 	import { page } from '$app/stores';
 	import { applyAction } from '$app/forms';
-	import { TP_TEAM } from '$lib/const';
+	import { TP_TEAM, currentSeason } from '$lib/const';
 	import TextArea from '$lib/controls/TextArea.svelte';
 
 	export let data;
@@ -352,6 +352,13 @@
 						<Checkbox id="completion-solo-{ci}" sideLabel labelAfter label="Solo" bind:checked={completion.solo} />
 						<Checkbox id="completion-first-{ci}" sideLabel labelAfter label="First" bind:checked={completion.first} />
 						<Checkbox id="completion-old-{ci}" sideLabel labelAfter label="Old" bind:checked={completion.old} />
+						<Input
+							label="Season"
+							id="seasonSolve"
+							type="number"
+							bind:value={completion.seasonSolve}
+							parse={parseInt}
+						/>
 					</div>
 					<Input
 						label="Team"

@@ -37,6 +37,7 @@
 	<div class="navbar max-width">
 		<a class="block" href="/">Home</a>
 		<a class="block" href="/solvers">Solvers</a>
+		<a class="block" href="/season">Season</a>
 		<a class="block" href="/upload">Upload</a>
 		<a class="block" href="/users">Users</a>
 		{#if user}
