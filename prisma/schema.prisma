@@ -75,7 +75,7 @@ model Completion {
   notes        String?
   dateAdded    DateTime?
   uploadedBy   String?
-  seasonSolve  Int
+  seasonSolve  Int @default(0)
 
   mission      Mission @relation(fields: [missionId], references: [id], onDelete: Cascade)
   missionId    Int

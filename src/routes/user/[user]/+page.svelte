@@ -9,7 +9,7 @@
 	import MissionCompletionCard from '$lib/cards/MissionCompletionCard.svelte';
 	import { browser } from '$app/environment';
 	import { writable } from 'svelte/store';
-	import { TP_TEAM, currentSeason } from '$lib/const';
+	import { TP_TEAM } from '$lib/const';
 	import type { Completion, MissionPack } from '@prisma/client';
 	import CompletionCard from '$lib/cards/CompletionCard.svelte';
 	import MissionCard from '$lib/cards/MissionCard.svelte';

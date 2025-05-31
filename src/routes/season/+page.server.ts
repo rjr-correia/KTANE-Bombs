@@ -1,5 +1,5 @@
 import client from '$lib/client';
-import { TP_TEAM, currentSeason } from '$lib/const';
+import { TP_TEAM, CURRENT_SEASON } from '$lib/const';
 import type { Completer } from '$lib/types';
 import type { PageServerLoad } from './$types';
 import { get } from 'svelte/store';
@@ -19,7 +19,7 @@ export const load: PageServerLoad = async function () {
 		},
 		where: {
 			verified: true,
-			seasonSolve: get(currentSeason),
+			seasonSolve: get(CURRENT_SEASON),
 			NOT: {
 				team: { has: TP_TEAM }
 			}

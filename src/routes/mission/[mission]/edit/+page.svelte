@@ -23,7 +23,7 @@
 	import type { EditMission } from './_types';
 	import { page } from '$app/stores';
 	import { applyAction } from '$app/forms';
-	import { TP_TEAM, currentSeason } from '$lib/const';
+	import { TP_TEAM } from '$lib/const';
 	import TextArea from '$lib/controls/TextArea.svelte';
 
 	export let data;

@@ -5,7 +5,7 @@
 	import { Completion } from '$lib/types';
 	import { formatTime, getLogfileLinks, parseTime } from '$lib/util';
 	import toast from 'svelte-french-toast';
-	import { TP_TEAM, currentSeason } from '$lib/const';
+	import { TP_TEAM, CURRENT_SEASON } from '$lib/const';
 
 	export let missionInfo: { [name: string]: any };
 	export let solverNames: string[];
@@ -217,7 +217,7 @@
 	}
 	function onSeasonToggle(e: Event, completion: Completion) {
 		const checked = (e.target as HTMLInputElement).checked;
-		completion.seasonSolve = checked ? $currentSeason : 0;
+		completion.seasonSolve = checked ? $CURRENT_SEASON : 0;
 	}
 </script>
 
